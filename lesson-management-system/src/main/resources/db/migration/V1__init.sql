@@ -48,8 +48,8 @@ CREATE TABLE IF NOT EXISTS lesson (
     date DATE NOT NULL,
     start_time TIME NOT NULL,
     content TEXT NOT NULL,
-    class_status VARCHAR(50) NOT NULL DEFAULT 'AGENDADA',
-    payment_status VARCHAR(50) NOT NULL DEFAULT 'PENDENTE',
+    class_status VARCHAR(50) NOT NULL DEFAULT 'SCHEDULED',
+    payment_status VARCHAR(50) NOT NULL DEFAULT 'PENDING',
     class_type VARCHAR(50) NOT NULL,
     observations TEXT,
     performance_evaluation DOUBLE PRECISION CHECK (performance_evaluation >= 0),
@@ -72,4 +72,9 @@ CREATE INDEX idx_student_guardian ON student_guardian(student_id);
 -- NOTE: The rule "every student must have at least one guardian" is enforced at the application layer
 -- (Bean Validation @NotEmpty on StudentEntity.guardianMappings). A strict DB-level constraint requires
 -- triggers in PostgreSQL.
+--
+-- Enum values in lesson table:
+-- class_status: SCHEDULED, COMPLETED, CANCELLED
+-- payment_status: PENDING, PAID
+-- class_type: ONLINE, IN_PERSON
 

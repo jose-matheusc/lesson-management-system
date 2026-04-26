@@ -56,21 +56,21 @@ public class LessonEntity {
     private String content;
 
     /**
-     * Lesson status: AGENDADA (scheduled), REALIZADA (completed), CANCELADA (cancelled).
+     * Lesson status: SCHEDULED, COMPLETED, CANCELLED.
      */
     @NotNull
     @Enumerated(EnumType.STRING)
     private LessonStatus classStatus;
 
     /**
-     * Weekly payment status: PENDENTE (pending), PAGO (paid).
+     * Weekly payment status: PENDING, PAID.
      */
     @NotNull
     @Enumerated(EnumType.STRING)
-    private PaymentStatus paymentStatus = PaymentStatus.PENDENTE;
+    private PaymentStatus paymentStatus = PaymentStatus.PENDING;
 
     /**
-     * Lesson type: ONLINE or PRESENCIAL (in-person).
+     * Lesson type: ONLINE or IN_PERSON.
      */
     @NotNull
     @Enumerated(EnumType.STRING)
@@ -119,19 +119,19 @@ public class LessonEntity {
     private DisciplineEntity discipline;
 
     public enum LessonStatus {
-        AGENDADA,  // Scheduled
-        REALIZADA, // Completed
-        CANCELADA  // Cancelled
+        SCHEDULED,
+        COMPLETED,
+        CANCELLED
     }
 
     public enum PaymentStatus {
-        PENDENTE, // Pending
-        PAGO      // Paid
+        PENDING,
+        PAID
     }
 
     public enum LessonType {
         ONLINE,
-        PRESENCIAL
+        IN_PERSON
     }
 }
 
