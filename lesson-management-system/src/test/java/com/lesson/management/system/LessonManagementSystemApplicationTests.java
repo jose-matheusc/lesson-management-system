@@ -1,4 +1,4 @@
-package com.lesson_management_system;
+package com.lesson.management.system;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
